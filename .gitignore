@@ -22,3 +22,5 @@ dist/
 
 # Export outputs
 *.pdf
+.agents.yml
+.osgrep/

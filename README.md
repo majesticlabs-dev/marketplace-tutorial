@@ -2,6 +2,8 @@
 
 An interactive tutorial for onboarding experienced software engineers to the Majestic Marketplace Claude Code plugins.
 
+Majestic Marketplace is located at: `../majestic-marketplace/`
+
 ## Quick Start
 
 ```bash
