@@ -1113,6 +1113,67 @@ For database query optimization:
 
 ---
 
+# Session Reflection
+
+**Reflect on conversation history and improve project configuration:**
+
+```bash
+/majestic-tools:insight:reflect
+```
+
+<div class="grid grid-cols-2 gap-8">
+<div>
+
+<v-clicks>
+
+**What it does:**
+- Analyzes entire conversation history
+- Identifies recurring patterns and pain points
+- Extracts lessons learned
+- Suggests AGENTS.md improvements
+- Recommends workflow optimizations
+
+**When to use:**
+- End of sprint or milestone
+- After completing major features
+- When noticing repeated issues
+- Before project handoffs
+
+</v-clicks>
+
+</div>
+<div>
+
+<v-click>
+
+**Example output:**
+
+```markdown
+## Patterns Identified
+
+1. Frequent N+1 queries in feature work
+   → Add to review topics
+
+2. Often need to explain Current.user pattern
+   → Add to AGENTS.md conventions
+
+3. Repeatedly fixing similar Rubocop issues
+   → Consider auto-fix configuration
+
+## Suggested AGENTS.md Update
+
+Add to ## Project Conventions:
+- Use Current.user for request context
+- Always eager load associations in controllers
+```
+
+</v-click>
+
+</div>
+</div>
+
+---
+
 # Meta Commands
 
 <div class="grid grid-cols-2 gap-4">
@@ -1137,14 +1198,11 @@ For database query optimization:
 </div>
 <div>
 
-### Insight Commands
+### Other Insight Commands
 
 ```bash
 # Track token usage/costs
 /majestic-tools:insight:ccusage
-
-# Reflect on session patterns
-/majestic-tools:insight:reflect
 
 # Challenge your thinking
 /majestic-tools:insight:spotlight
