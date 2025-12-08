@@ -942,71 +942,107 @@ layout: section
 
 ---
 
-# Discovery & Analysis
+# Finding the Right Tool
 
-<div class="grid grid-cols-2 gap-4">
-<div>
-
-### Finding the Right Tool
+**Generic command to navigate all plugins:**
 
 ```bash
-# What tool should I use for X?
-/majestic-tools:majestic-guide "optimize database queries"
+/majestic-tools:majestic-guide "what you want to do"
 ```
+
+<div class="grid grid-cols-2 gap-8">
+<div>
+
+<v-clicks>
+
+**What it does:**
+- Analyzes your request
+- Searches across all installed plugins
+- Recommends the right agent, command, or skill
+
+**When to use:** Don't know which tool to use for your task
+
+</v-clicks>
+
+</div>
+<div>
 
 <v-click>
 
+**Example:**
+
+```bash
+/majestic-tools:majestic-guide "optimize database queries"
+```
+
 **Output:**
 ```
-For database query optimization, use:
+For database query optimization:
 
 1. agent database-optimizer
-   - EXPLAIN analysis
-   - Index recommendations
-   - Query rewriting
+   - EXPLAIN analysis, index recommendations
 
 2. agent performance-reviewer
-   - N+1 detection
-   - Slow query identification
+   - N+1 detection, slow queries
 
 3. skill ripgrep-search
-   - Find all query patterns
+   - Find query patterns
 ```
 
 </v-click>
 
 </div>
+</div>
+
+---
+
+# Analysis Workflows
+
+<div class="grid grid-cols-2 gap-4">
 <div>
 
-### Deep Analysis
+### Question Answering
 
 ```bash
-# Multiple solution options
+# Research without coding
+/majestic-engineer:workflows:question \
+  "How does authentication work in this app?"
+```
+
+<v-click>
+
+**Use when:** Exploring codebase, understanding architecture
+
+</v-click>
+
+### Multiple Solution Analysis
+
+```bash
+# Generate and compare options
 /majestic-tools:workflows:ultra-options \
   "How to implement real-time notifications"
 ```
 
 <v-click>
 
-**Output:**
+**Output:** 3-5 options with pros/cons, complexity, recommendations
+
+</v-click>
+
+</div>
+<div>
+
+### Multi-Agent Planning
+
+```bash
+# Complex planning with multiple agents
+/majestic-tools:workflows:ultrathink-task \
+  "Migrate authentication system"
 ```
-## Option 1: Turbo Streams + Solid Cable
-Pros: Native Rails 8, database-backed
-Cons: Polling overhead for scale
-Complexity: Low
 
-## Option 2: ActionCable + Redis
-Pros: True WebSockets, proven at scale
-Cons: Redis dependency
-Complexity: Medium
+<v-click>
 
-## Option 3: Hotwire + SSE
-Pros: Simple, HTTP-based
-Cons: One-way only
-Complexity: Low
-
-Recommendation: Option 1 for <10k users
-```
+**Agents:** Architect + Research + Coder + Tester in parallel
 
 </v-click>
 
