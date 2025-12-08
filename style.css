@@ -1,0 +1,62 @@
+/* Custom styles for Majestic Marketplace Tutorial */
+
+/* Improve code block readability */
+.slidev-code {
+  @apply text-sm;
+}
+
+/* Command examples styling */
+code {
+  @apply bg-gray-800/50 px-1.5 py-0.5 rounded text-sm;
+}
+
+/* Table improvements */
+table {
+  @apply w-full text-sm;
+}
+
+th {
+  @apply bg-gray-700/50 font-semibold;
+}
+
+td, th {
+  @apply px-3 py-2 border-b border-gray-700/30;
+}
+
+/* Mermaid diagram improvements */
+.mermaid {
+  @apply my-4;
+}
+
+/* Better list spacing */
+ul li, ol li {
+  @apply my-1;
+}
+
+/* Nested list indentation */
+ul ul, ol ol, ul ol, ol ul {
+  @apply ml-4;
+}
+
+/* Section headers */
+h1 {
+  @apply text-4xl font-bold;
+}
+
+h2 {
+  @apply text-2xl font-semibold text-blue-400;
+}
+
+h3 {
+  @apply text-xl font-medium text-green-400;
+}
+
+/* Grid layouts */
+.grid {
+  @apply gap-4;
+}
+
+/* Better visibility for dark theme */
+.text-sm {
+  @apply leading-relaxed;
+}
