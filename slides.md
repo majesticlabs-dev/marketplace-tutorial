@@ -1051,6 +1051,133 @@ For database query optimization:
 
 ---
 
+# Expert Panel Discussions
+
+**Multi-perspective reasoning through structured expert debates:**
+
+```bash
+/expert-panel "Should we migrate to microservices?"
+```
+
+<div class="grid grid-cols-2 gap-8">
+<div>
+
+<v-clicks>
+
+**What it does:**
+- Simulates panel of 3-5 thought leaders
+- Structured multi-round discussions
+- Extracts consensus + divergence
+- Actionable recommendations
+
+**When to use:**
+- Important architectural decisions
+- Multiple valid approaches exist
+- Need to see tradeoffs you'd miss alone
+- Strategic planning requiring diverse views
+
+</v-clicks>
+
+</div>
+<div>
+
+<v-click>
+
+**Discussion Types:**
+
+| Type | Rounds | Best For |
+|------|--------|----------|
+| round-table | 1 | Quick perspectives |
+| debate | 2-3 | Opposing views |
+| consensus-seeking | 1-3 | Team alignment |
+| deep-dive | 3 | Complex strategy |
+
+</v-click>
+
+</div>
+</div>
+
+---
+
+# Expert Panel: Who to Invite
+
+**Command suggests experts based on your topic:**
+
+<div class="grid grid-cols-2 gap-8">
+<div>
+
+<v-clicks>
+
+**Business Strategy:**
+- Peter Thiel (zero to one, contrarian thinking)
+- Naval Ravikant (leverage, first principles)
+- Jason Fried (bootstrapping, profitability)
+
+**Marketing & Growth:**
+- Seth Godin (positioning, purple cow)
+- April Dunford (positioning strategy)
+- Rand Fishkin (SEO, content marketing)
+
+</v-clicks>
+
+</div>
+<div>
+
+<v-clicks>
+
+**Product Design:**
+- Ryan Singer (Shape Up, product development)
+- Julie Zhuo (product leadership)
+- Alan Cooper (interaction design)
+
+**Pricing & Monetization:**
+- Patrick Campbell (pricing strategy)
+- Rob Walling (SaaS economics)
+- Josh Pigford (metrics, bootstrapping)
+
+</v-clicks>
+
+</div>
+</div>
+
+---
+
+# Expert Panel Example
+
+```bash
+/expert-panel "Should we migrate to microservices?"
+```
+
+<v-clicks>
+
+**Interactive Setup:**
+1. Suggests experts: DHH, Martin Fowler, Sam Newman
+2. Confirms expert list with you
+3. Suggests discussion type: debate (opposing views)
+4. Confirms type choice
+
+**Panel Output:**
+
+```markdown
+## Consensus Findings (High Confidence)
+- Not appropriate for teams under 15-20 developers ✅ 🔴🔵🟢
+- Requires mature DevOps (CI/CD, monitoring, service mesh) ✅ 🔴🔵🟢
+
+## Divergent Perspectives
+🔴 DHH: Almost never. Majestic monolith works for 95% of cases
+🔵 Martin Fowler: When organizational scaling demands it (MonolithFirst)
+🟢 Sam Newman: When scaling teams past 50 developers
+
+## Actionable Recommendations
+1. Stick with modular monolith (team size: 10 devs)
+2. Build clear module boundaries now
+3. Invest in DevOps foundation regardless
+```
+
+</v-clicks>
+
+---
+
 # External LLM Reviews
 
 <div class="grid grid-cols-2 gap-4">
