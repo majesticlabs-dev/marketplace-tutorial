@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "slidev --open",
-    "build": "slidev build",
+    "build": "slidev build && rm -f dist/_redirects",
     "export": "slidev export"
   },
   "dependencies": {
