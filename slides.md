@@ -1053,10 +1053,10 @@ For database query optimization:
 
 # Expert Panel Discussions
 
-**Multi-perspective reasoning through structured expert debates:**
+**Multi-perspective reasoning through structured expert debates** (`majestic-experts` plugin):
 
 ```bash
-/expert-panel "Should we migrate to microservices?"
+/majestic-experts:expert-panel "Should we migrate to microservices?"
 ```
 
 <div class="grid grid-cols-2 gap-8">
@@ -1099,24 +1099,27 @@ For database query optimization:
 
 ---
 
-# Expert Panel: Who to Invite
+# Expert Panel: 22 Curated Experts
 
-**Command suggests experts based on your topic:**
+**Command suggests experts based on your topic (from `_registry.yml`):**
 
 <div class="grid grid-cols-2 gap-8">
 <div>
 
 <v-clicks>
 
-**Business Strategy:**
-- Peter Thiel (zero to one, contrarian thinking)
-- Naval Ravikant (leverage, first principles)
-- Jason Fried (bootstrapping, profitability)
+**Engineering (6):**
+- DHH (Rails, majestic monolith)
+- Martin Fowler (architecture, patterns)
+- Kent Beck (TDD, XP)
+- Uncle Bob (clean code, SOLID)
+- Sandi Metz (OO design, Ruby)
+- Rich Hickey (simplicity, functional)
 
-**Marketing & Growth:**
-- Seth Godin (positioning, purple cow)
-- April Dunford (positioning strategy)
-- Rand Fishkin (SEO, content marketing)
+**Business Strategy (7):**
+- Seth Godin, Peter Thiel, Naval Ravikant
+- Jason Fried, Paul Graham
+- April Dunford, Rand Fishkin
 
 </v-clicks>
 
@@ -1125,15 +1128,15 @@ For database query optimization:
 
 <v-clicks>
 
-**Product Design:**
-- Ryan Singer (Shape Up, product development)
-- Julie Zhuo (product leadership)
+**Product (4):**
+- Ryan Singer (Shape Up)
+- Julie Zhuo (design leadership)
+- Marty Cagan (product management)
 - Alan Cooper (interaction design)
 
-**Pricing & Monetization:**
-- Patrick Campbell (pricing strategy)
-- Rob Walling (SaaS economics)
-- Josh Pigford (metrics, bootstrapping)
+**Pricing (3):** Patrick Campbell, Rob Walling, Josh Pigford
+
+**Security (2):** Troy Hunt, Tanya Janca
 
 </v-clicks>
 
@@ -1145,13 +1148,13 @@ For database query optimization:
 # Expert Panel Example
 
 ```bash
-/expert-panel "Should we migrate to microservices?"
+/majestic-experts:expert-panel "Should we migrate to microservices?"
 ```
 
 <v-clicks>
 
 **Interactive Setup:**
-1. Suggests experts: DHH, Martin Fowler, Sam Newman
+1. Suggests experts: DHH, Martin Fowler, Kent Beck
 2. Confirms expert list with you
 3. Suggests discussion type: debate (opposing views)
 4. Confirms type choice
@@ -1166,7 +1169,7 @@ For database query optimization:
 ## Divergent Perspectives
 🔴 DHH: Almost never. Majestic monolith works for 95% of cases
 🔵 Martin Fowler: When organizational scaling demands it (MonolithFirst)
-🟢 Sam Newman: When scaling teams past 50 developers
+🟢 Kent Beck: Start simple, extract when tests tell you to
 
 ## Actionable Recommendations
 1. Stick with modular monolith (team size: 10 devs)
