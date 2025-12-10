@@ -48,9 +48,10 @@ layoutClass: gap-16
 
 - **Installation** - Get started in 2 minutes
 - **Core Workflow** - Plan → Build → Review → Ship
-- **Three Key Plugins**
+- **Four Key Plugins**
   - `majestic-engineer` - Orchestration hub
   - `majestic-rails` - Rails specialization
+  - `majestic-experts` - Expert panel discussions
   - `majestic-tools` - Meta utilities
 - **Configuration** - `.agents.yml` customization
 - **Real Examples** - Practical usage patterns
@@ -937,123 +938,14 @@ layout: section
 ---
 
 # Part 5
-## majestic-tools
-### Meta Utilities
-
----
-
-# Finding the Right Tool
-
-**Generic command to navigate all plugins:**
-
-```bash
-/majestic-tools:majestic-guide "what you want to do"
-```
-
-<div class="grid grid-cols-2 gap-8">
-<div>
-
-<v-clicks>
-
-**What it does:**
-- Analyzes your request
-- Searches across all installed plugins
-- Recommends the right agent, command, or skill
-
-**When to use:** Don't know which tool to use for your task
-
-</v-clicks>
-
-</div>
-<div>
-
-<v-click>
-
-**Example:**
-
-```bash
-/majestic-tools:majestic-guide "optimize database queries"
-```
-
-**Output:**
-```
-For database query optimization:
-
-1. agent database-optimizer
-   - EXPLAIN analysis, index recommendations
-
-2. agent performance-reviewer
-   - N+1 detection, slow queries
-
-3. skill ripgrep-search
-   - Find query patterns
-```
-
-</v-click>
-
-</div>
-</div>
-
----
-
-# Analysis Workflows
-
-<div class="grid grid-cols-2 gap-4">
-<div>
-
-### Question Answering
-
-```bash
-# Research without coding
-/majestic-engineer:workflows:question \
-  "How does authentication work in this app?"
-```
-
-<v-click>
-
-**Use when:** Exploring codebase, understanding architecture
-
-</v-click>
-
-### Multiple Solution Analysis
-
-```bash
-# Generate and compare options
-/majestic-tools:workflows:ultra-options \
-  "How to implement real-time notifications"
-```
-
-<v-click>
-
-**Output:** 3-5 options with pros/cons, complexity, recommendations
-
-</v-click>
-
-</div>
-<div>
-
-### Multi-Agent Planning
-
-```bash
-# Complex planning with multiple agents
-/majestic-tools:workflows:ultrathink-task \
-  "Migrate authentication system"
-```
-
-<v-click>
-
-**Agents:** Architect + Research + Coder + Tester in parallel
-
-</v-click>
-
-</div>
-</div>
+## majestic-experts
+### Expert Panel Discussions
 
 ---
 
 # Expert Panel Discussions
 
-**Multi-perspective reasoning through structured expert debates** (`majestic-experts` plugin):
+**Multi-perspective reasoning through structured expert debates:**
 
 ```bash
 /majestic-experts:expert-panel "Should we migrate to microservices?"
@@ -1178,6 +1070,123 @@ For database query optimization:
 ```
 
 </v-clicks>
+
+---
+layout: section
+---
+
+# Part 6
+## majestic-tools
+### Meta Utilities
+
+---
+
+# Finding the Right Tool
+
+**Generic command to navigate all plugins:**
+
+```bash
+/majestic-tools:majestic-guide "what you want to do"
+```
+
+<div class="grid grid-cols-2 gap-8">
+<div>
+
+<v-clicks>
+
+**What it does:**
+- Analyzes your request
+- Searches across all installed plugins
+- Recommends the right agent, command, or skill
+
+**When to use:** Don't know which tool to use for your task
+
+</v-clicks>
+
+</div>
+<div>
+
+<v-click>
+
+**Example:**
+
+```bash
+/majestic-tools:majestic-guide "optimize database queries"
+```
+
+**Output:**
+```
+For database query optimization:
+
+1. agent database-optimizer
+   - EXPLAIN analysis, index recommendations
+
+2. agent performance-reviewer
+   - N+1 detection, slow queries
+
+3. skill ripgrep-search
+   - Find query patterns
+```
+
+</v-click>
+
+</div>
+</div>
+
+---
+
+# Analysis Workflows
+
+<div class="grid grid-cols-2 gap-4">
+<div>
+
+### Question Answering
+
+```bash
+# Research without coding
+/majestic-engineer:workflows:question \
+  "How does authentication work in this app?"
+```
+
+<v-click>
+
+**Use when:** Exploring codebase, understanding architecture
+
+</v-click>
+
+### Multiple Solution Analysis
+
+```bash
+# Generate and compare options
+/majestic-tools:workflows:ultra-options \
+  "How to implement real-time notifications"
+```
+
+<v-click>
+
+**Output:** 3-5 options with pros/cons, complexity, recommendations
+
+</v-click>
+
+</div>
+<div>
+
+### Multi-Agent Planning
+
+```bash
+# Complex planning with multiple agents
+/majestic-tools:workflows:ultrathink-task \
+  "Migrate authentication system"
+```
+
+<v-click>
+
+**Agents:** Architect + Research + Coder + Tester in parallel
+
+</v-click>
+
+</div>
+</div>
 
 ---
 
@@ -1358,7 +1367,7 @@ skill brainstorming
 layout: section
 ---
 
-# Part 6
+# Part 7
 ## Real-World Examples
 
 ---
