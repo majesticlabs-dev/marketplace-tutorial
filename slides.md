@@ -993,7 +993,7 @@ layout: section
 
 # Expert Panel: 22 Curated Experts
 
-**Command suggests experts based on your topic (from `_registry.yml`):**
+**Command suggests experts based on your topic (from `registry.yml`):**
 
 <div class="grid grid-cols-2 gap-8">
 <div>
