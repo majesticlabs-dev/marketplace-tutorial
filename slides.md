@@ -62,15 +62,16 @@ layoutClass: gap-16
 
 <div class="mt-12">
 
-```yaml {all|1-2|4-8|10-14}
+```yaml {all|1-2|4-10|12-15}
 # .agents.yml
 tech_stack: rails
 
-# Quality Gate
-quality_gate:
-  reviewers:
-    - security-review
-    - pragmatic-rails-reviewer
+# Toolbox
+toolbox:
+  quality_gate:
+    reviewers:
+      - majestic-engineer:qa:security-review
+      - majestic-rails:review:pragmatic-rails-reviewer
 
 # Workflow
 workflow: worktrees
@@ -116,7 +117,7 @@ claude /plugin install majestic-tools
 
 ```bash
 # Creates AGENTS.md + .agents.yml
-claude /majestic-engineer:workflows:init-agents-md
+claude /majestic:init-agents-md
 ```
 
 </v-clicks>
@@ -209,13 +210,13 @@ graph LR
 
 | Phase | Command | What Happens |
 |-------|---------|--------------|
-| **Plan** | `/majestic-engineer:workflows:plan` | Research → Design → Create plan |
-| **Build** | `/majestic-engineer:workflows:build-task` | Implement → Test → Auto QA |
-| **Ship** | `/majestic-engineer:workflows:ship-it` | Lint → Commit → PR |
+| **Plan** | `/majestic:plan` | Research → Design → Create plan |
+| **Build** | `/majestic:build-task` | Implement → Test → Auto QA |
+| **Ship** | `/majestic:ship-it` | Lint → Commit → PR |
 
 **Key benefit**: Quality Gate runs automatically - reviewers in parallel, auto-fix (3 retries)
 
-**Alternative**: Manual code → `/majestic-engineer:workflows:code-review --staged` → Ship
+**Alternative**: Manual code → `/majestic:code-review --staged` → Ship
 
 </v-clicks>
 
@@ -226,7 +227,7 @@ graph LR
 <div class="grid grid-cols-2 gap-4">
 <div>
 
-### `/majestic-engineer:workflows:plan "add user authentication"`
+### `/majestic:plan "add user authentication"`
 
 <v-clicks>
 
@@ -310,7 +311,7 @@ graph LR
 
 ---
 
-# Building: `/majestic-engineer:workflows:build-task`
+# Building: `/majestic:build-task`
 
 <div class="grid grid-cols-2 gap-4">
 <div>
@@ -318,7 +319,7 @@ graph LR
 ### Command
 
 ```bash
-/majestic-engineer:workflows:build-task #123
+/majestic:build-task #123
 ```
 
 **Autonomous workflow:**
@@ -359,16 +360,17 @@ graph LR
 ### Configuration in `.agents.yml`
 
 ```yaml
-# Quality Gate
-quality_gate:
-  reviewers:
-    - security-review      # OWASP scanning
-    - test-reviewer        # Coverage checks
-    # Optional:
-    - simplicity-reviewer  # YAGNI enforcement
-    # Framework-specific (if rails/python):
-    - pragmatic-rails-reviewer
-    - python-reviewer
+# Toolbox
+toolbox:
+  quality_gate:
+    reviewers:
+      - majestic-engineer:qa:security-review    # OWASP scanning
+      - majestic-engineer:qa:test-reviewer      # Coverage checks
+      # Optional:
+      - majestic-engineer:qa:simplicity-reviewer  # YAGNI
+      # Framework-specific (if rails/python):
+      - majestic-rails:review:pragmatic-rails-reviewer
+      - majestic-python:python-reviewer
 ```
 
 <v-clicks>
@@ -413,7 +415,7 @@ quality_gate:
 <div class="grid grid-cols-2 gap-4">
 <div>
 
-### `/majestic-engineer:workflows:ship-it`
+### `/majestic:ship-it`
 
 <v-clicks>
 
@@ -443,13 +445,13 @@ feat(auth): add user authentication
 
 ```bash
 # Just commit
-/majestic-engineer:git:commit
+/git:commit
 
 # Just create PR
-/majestic-engineer:git:create-pr
+/git:create-pr
 
 # Full flow
-/majestic-engineer:workflows:ship-it
+/majestic:ship-it
 ```
 
 <v-click>
@@ -531,17 +533,17 @@ graph TB
 
 | Command | Purpose | When to Use |
 |---------|---------|-------------|
-| `/majestic-engineer:workflows:plan "desc"` | Create implementation plan | Starting any feature |
-| `/majestic-engineer:workflows:prd "product"` | Generate PRD document | Defining new products |
-| `/majestic-engineer:workflows:guided-prd` | Conversational PRD creation | Fuzzy requirements |
-| `/majestic-engineer:workflows:build-task #123` | Autonomous task implementation | GitHub/Linear/Beads tasks |
-| `/majestic-engineer:workflows:code-review` | Tech-stack aware review | Quality checks |
-| `/majestic-engineer:workflows:debug "error"` | Systematic debugging | Troubleshooting |
-| `/majestic-engineer:workflows:design-plan` | UI/UX design planning | Design-focused work |
-| `/majestic-engineer:git:commit` | Conventional commits | Ready to commit |
-| `/majestic-engineer:git:create-pr` | PR with template | Opening reviews |
-| `/majestic-engineer:session:handoff` | Create handoff document | Pausing work |
-| `/majestic-engineer:session:pickup` | Resume from handoff | Continuing later |
+| `/majestic:plan "desc"` | Create implementation plan | Starting any feature |
+| `/majestic:prd "product"` | Generate PRD document | Defining new products |
+| `/majestic:build-task #123` | Autonomous task implementation | GitHub/Linear/Beads tasks |
+| `/majestic:code-review` | Auto-detect tech stack, run review | Quality checks |
+| `/majestic:quality-gate` | Run parallel reviewers | Tech stack-aware QA |
+| `/majestic:debug "error"` | Systematic debugging | Troubleshooting |
+| `/git:commit` | Conventional commits | Ready to commit |
+| `/git:create-pr` | PR with template | Opening reviews |
+| `/session:handoff` | Create handoff document | Pausing work |
+| `/session:pickup` | Resume from handoff | Continuing later |
+| `/majestic:commands-hud` | Display all commands | Command discovery |
 
 ---
 
@@ -649,7 +651,7 @@ Alternative to build-task for plan-driven development:
 
 ```bash
 # Create implementation plan
-/majestic-engineer:workflows:plan "add user authentication"
+/majestic:plan "add user authentication"
 
 # Build from plan (Rails-specific)
 /majestic-rails:workflows:build docs/plans/user-authentication.md
@@ -1144,7 +1146,7 @@ For database query optimization:
 
 ```bash
 # Research without coding
-/majestic-engineer:workflows:question \
+/majestic:question \
   "How does authentication work in this app?"
 ```
 
@@ -1378,22 +1380,22 @@ layout: section
 
 ```bash
 # 1. Plan the feature
-/majestic-engineer:workflows:plan "Add user profile with avatar upload"
+/majestic:plan "Add user profile with avatar upload"
 
 # 2. Review the plan before building
 agent plan-review docs/plans/user-profile.md
 
 # 3. Build from the plan
-/majestic-rails:workflows:build docs/plans/user-profile.md
+/rails:build docs/plans/user-profile.md
 
 # 4. Review the implementation
-/majestic-rails:workflows:code-review --staged
+/majestic:code-review --staged
 
 # 5. Fix any issues found
 # (Claude auto-addresses review feedback)
 
 # 6. Ship it
-/majestic-engineer:workflows:ship-it
+/majestic:ship-it
 ```
 
 </div>
@@ -1412,7 +1414,7 @@ agent plan-review docs/plans/user-profile.md
 
 ```bash
 # 1. Start debugging
-/majestic-engineer:workflows:debug "Users getting 500 error on checkout"
+/majestic:debug "Users getting 500 error on checkout"
 
 # 2. Agent automatically:
 #    - Searches logs
@@ -1499,7 +1501,7 @@ class: text-center
 ```bash
 claude /plugin marketplace add majesticlabs-dev/majestic-marketplace
 claude /plugin install majestic-engineer majestic-rails majestic-tools
-claude /majestic-engineer:workflows:init-agents-md
+claude /majestic:init-agents-md
 ```
 
 </div>
@@ -1509,7 +1511,7 @@ claude /majestic-engineer:workflows:init-agents-md
 Then run your first workflow:
 
 ```bash
-claude /majestic-engineer:workflows:plan "your first feature"
+claude /majestic:plan "your first feature"
 ```
 
 </div>
