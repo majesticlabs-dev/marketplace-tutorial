@@ -117,7 +117,7 @@ claude /plugin install majestic-tools
 
 ```bash
 # Creates AGENTS.md + .agents.yml
-claude /majestic:init-agents-md
+claude /majestic:init
 ```
 
 </v-clicks>
@@ -1501,7 +1501,7 @@ class: text-center
 ```bash
 claude /plugin marketplace add majesticlabs-dev/majestic-marketplace
 claude /plugin install majestic-engineer majestic-rails majestic-tools
-claude /majestic:init-agents-md
+claude /majestic:init
 ```
 
 </div>
