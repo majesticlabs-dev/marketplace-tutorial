@@ -508,7 +508,7 @@ graph TB
         prag["pragmatic-rails-reviewer"]
     end
 
-    subgraph tools["majestic-tools"]
+    subgraph llm["majestic-llm"]
         codex["codex-reviewer"]
         gemini["gemini-reviewer"]
     end
@@ -522,7 +522,7 @@ graph TB
 
     style engineer fill:#818cf8
     style rails fill:#34d399
-    style tools fill:#fbbf24
+    style llm fill:#fbbf24
 ```
 
 </div>
@@ -1201,15 +1201,15 @@ For database query optimization:
 
 ```bash
 # Review with Codex
-/majestic-tools:external-llm:review \
+/majestic-llm:review \
   --staged --llm codex
 
 # Review with Gemini
-/majestic-tools:external-llm:review \
+/majestic-llm:review \
   --branch --llm gemini
 
 # Both in parallel
-/majestic-tools:external-llm:review \
+/majestic-llm:review \
   --staged --llm all
 ```
 
@@ -1219,7 +1219,7 @@ For database query optimization:
 
 ```bash
 # Consult on architecture
-/majestic-tools:external-llm:consult \
+/majestic-llm:consult \
   "Is CQRS overkill for this app?" \
   --llm all
 ```
